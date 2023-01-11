@@ -1,0 +1,399 @@
+\documentclass[oneside,12pt,reqno]{amsart}
+ 
+\usepackage{amsmath, amscd}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Fonts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Euler Math Fonts and Palatino Text Font
+%\usepackage{amssymb}
+%\usepackage{amsxtra}
+%\usepackage{palatino}
+%\usepackage[mathcal]{euler}
+
+%% Computer Modern Fonts (with mathcal = euler script)
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{tikz-cd}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+%\usepackage{graphicx}
+%\usepackage[font={small,it}]{caption}
+\usepackage{graphicx, overpic}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{pinlabel}
+\usepackage{floatrow}
+%\usepackage{sidecap}
+%\usepackage{eucal}
+
+%\usepackage{amsmath}
+%\usepackage{amssymb}
+%\usepackage{graphicx}
+\usepackage{soul}
+%\usepackage{caption}
+%\usepackage{subcaption}
+%\usepackage{pinlabel}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{decorations.markings}
+\usepackage{color}
+\usetikzlibrary{shapes.gates.logic.US,trees,positioning,arrows}
+%\usepackage{xfrac}
+ \usepackage{float}
+ 
+ \usepackage{eucal}
+\usepackage[all]{xy}
+\usepackage{multicol}
+
+\usepackage{mathtools}
+\usepackage{lipsum}
+ 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Margins
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{6.25in}
+\setlength{\topmargin}{-.33in}
+\setlength{\textheight}{9in}
+%\addtolength{\textheight}{-\footskip}
+%\addtolength{\textheight}{-\headheight}
+%\addtolength{\textheight}{-\headsep}
+
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+%\lhead{}
+%\chead{\scriptsize{NONPOSITIVE CURVATURE: G. CHRISTOPHER HRUSKA}}
+%\rhead{\scriptsize{\thepage}}
+%\lfoot{}
+%\cfoot{}
+%\rfoot{}
+%\renewcommand{\headrulewidth}{0pt}
+%\renewcommand{\footrulewidth}{0pt}
+%\addtolength{\headheight}{8pt}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem*{main}{Main Theorem}
+\newtheorem{claim}{Claim}[thm]
+\renewcommand{\theclaim}{\arabic{claim}}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{conv}[thm]{Convention}
+\newtheorem{exmp}[thm]{Example}
+\newtheorem{ques}[thm]{Question}
+\newtheorem{prob}[thm]{Problem}
+\newtheorem{cons}[thm]{construction}
+
+\newtheorem*{thm_dense}{Theorem 5.7}
+\newtheorem*{prop_ct2}{Proposition 5.9}
+\newtheorem*{prop-MC}{Proposition 4.28}
+\newtheorem*{thm_div}{Theorem 2.13}
+%\newtheorem*{cor_mnotc}{Corollary 2.13}
+
+\newcommand{\abs}[1]{\lvert{#1}\rvert}
+\newcommand{\norm}[1]{\left\lVert{#1}\right\rVert}
+\renewcommand{\bar}[1]{\overline{#1}}
+\newcommand{\boundary}{\partial}
+\newcommand{\gen}[1]{\langle{#1}\rangle}
+\newcommand{\biggen}[1]{\bigl\langle {#1} \bigr\rangle}
+\newcommand{\presentation}[2]{\langle\, {#1} \mid {#2} \,\rangle}
+\newcommand{\bigpresentation}[2]{ \bigl\langle \, {#1} \bigm| {#2} \,
+                                \bigr\rangle }
+\newcommand{\set}[2]{\{\,{#1} \mid {#2} \,\}}
+\newcommand{\bigset}[2]{ \bigl\{ \, {#1} \bigm| {#2} \, \bigr\} }
+\renewcommand{\emptyset}{\varnothing}
+\newcommand{\varfrac}[2]{{}^{#1} \! /_{#2}}
+\renewcommand{\setminus}{-}
+
+\newcommand{\field}[1]{\mathbb{#1}}
+%\newcommand{\field}[1]{\mathbf{#1}}
+\newcommand{\Z}{\field{Z}}
+\newcommand{\integers}{\field{Z}}
+\newcommand{\R}{\field{R}}
+\newcommand{\Q}{\field{Q}}
+\newcommand{\N}{\field{N}}
+\newcommand{\E}{\field{E}}
+\newcommand{\Hyp}{\field{H}}
+\newcommand{\F}{\field{F}}
+\newcommand{\PP}{\field{P}}
+\newcommand{\HH}{\field{H}}
+\newcommand{\EE}{\field{E}}
+\newcommand{\KK}{\field{K}}
+\newcommand{\LL}{\field{L}}
+\newcommand{\TT}{\field{T}}
+\newcommand{\NN}{\field{N}}
+\newcommand{\RR}{\field{R}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cW}{\mathcal{W}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\JJ}{\field{J}}
+
+\DeclareMathOperator{\Hom}{Hom}
+\newcommand{\homology}{\ensuremath{{\sf{H}}}}
+\newcommand{\dsum}{\oplus}
+\newcommand{\inclusion}{\hookrightarrow}
+\newcommand{\of}{\circ}
+\renewcommand{\implies}{\Rightarrow}
+%\renewcommand{\hat}{\widehat}
+
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\Dist}{Dist}
+\DeclareMathOperator{\Isom}{Isom}
+\DeclareMathOperator{\CAT}{CAT}
+\DeclareMathOperator{\Lk}{Lk}
+\DeclareMathOperator{\Image}{Im}
+\DeclareMathOperator{\Span}{Span}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\Diam}{Diam}
+\newcommand{\ball}[2]{B ( {#1}, {#2} )}%Ball{center}{radius}
+\newcommand{\bigball}[2]{B \bigl( {#1}, {#2} \bigr)}
+\newcommand{\cball}[2]{\bar{ \ball{#1}{#2} } } % Closed ball
+\newcommand{\bigcball}[2]{\bar{ \bigball{#1}{#2} } }
+\newcommand{\nbd}[2]{\mathcal{N}_{#2}({#1})} % Neighborhood{center}{radius}
+\newcommand{\bignbd}[2]{\mathcal{N}_{#2} \bigl( {#1} \bigr)}
+\newcommand{\Set}[1]{\mathcal{#1}}
+%\newcommand{\path}[1]{\mathfrak{#1}}
+%\renewcommand\thesubfigure{\roman{subfigure}}
+\DeclareMathOperator{\hstar}{*}
+\newcommand{\gstar}[1]{\hstar\limits_{#1}}
+
+\DeclareMathOperator{\Div}{Div}
+\DeclareMathOperator{\ldiv}{ldiv}
+\DeclareMathOperator{\height}{height}
+\DeclareMathOperator{\width}{width}
+\newcommand{\LSH}{\textup{(LSH)}}
+\DeclareMathOperator{\Cone}{Cone}
+\def\ulim{\mathop{\hbox{\textup{$\omega$-lim}}}}
+\DeclareMathOperator{\Cayley}{Cayley}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\Sat}{Sat} %Saturation
+\DeclareMathOperator{\Hull}{Hull}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\join}{join}
+
+\hyphenation{ge-o-des-ic ge-o-des-ics quasi-convex quasi-convex-ity
+     neu-tered}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Margin comments, obtained from Dani Wise
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\showcomments}{yes}
+%\newcommand{\showcomments}{no}
+
+\usepackage{ifthen}
+\newsavebox{\commentbox}
+\newenvironment{comment}%
+% begin comment
+{\ifthenelse{\equal{\showcomments}{yes}}%
+% then begin comment in margin
+{\footnotemark
+    \begin{lrbox}{\commentbox}
+    \begin{minipage}[t]{1.25in}\raggedright\sffamily\tiny
+    \footnotemark[\arabic{footnote}]}
+% else eat contents of the environment
+{\begin{lrbox}{\commentbox}}}%
+% end comment
+{\ifthenelse{\equal{\showcomments}{yes}}%
+% then end comment
+{\end{minipage}\end{lrbox}\marginpar{\usebox{\commentbox}}}
+% else finish eating
+{\end{lrbox}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Start of document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\title[]{Auto Insurance Fraud Claim Detection}
+
+
+\author{Hung Cong Tran}
+
+%\maketitle
+%\centering{
+\centerline{\textbf{\Large Auto Insurance Fraud Claim Detection}}
+
+\section*{}
+%\textbf{Problem:} 
+\textit{Fraudulent auto insurance accident claims are very popular in India nowaday. Insurance companies are  paying very large amounts of of wrong insurance payout and this hurts their profits significantly. Also, insurance companies have to raise their insurance premiums and this also hurts their current customers. Therefore, there is a big demand for a good prediction model to detect fraudulent vehicle accident claims from insurance companies. In this project, I will create a classification model that help predict whether or not vehicle insurance accident claims in India are fraudulent and reduce the amount of wrong insurance payout for insurance companies.}
+
+
+\section{Data Cleaning}
+\subsection{Data}
+
+There are 28836 auto insurance claims in the original data which are represented by five csv files with the following information:
+
+\underline{\textit{Insurance Claim Information:}} This table contains Customer ID, Type Of Incident, Type Of Collission, Severity Of Incident, Authorities Contacted, Incident State, Incident City, Incident Addresses, Incident Time, Number Of Vehicles Involved, Property Damage, Body Injuries, Witnesses, Police Reports, Amount Of Total Claims, Amount Of Injury Claim, Amount Of Property Claim, and Amount Of Vehicle Damage.
+
+\underline{\textit{Customer Demographics:}} This table contains Customer ID, Insured Age, Insured ZipCode, Insured Gender, Insured Education Level, Insured Occupation, Insured Hobbies, Capital Gains, Capital Loss, and Country.
+
+\underline{\textit{Insurance Policy:}} This table contains Insurance Policy Number, Customer Loyalty Period, Date Of Policy Coverage, Insurance Policy State, Policy Combined-Single Limit, Policy Deductible, Policy Annual Premium, Umbrella Limit, Insured Relationship, and Customer ID. 
+
+\underline{\textit{Vehicle Information:}} This table contains Customer ID, Vehicle Attribute, and Vehicle Attribute details.
+
+\underline{\textit{Reported Fraud:}} This table only contains Customer ID and Reported Fraud.
+\subsection{Data Cleaning}       
+I created a new and cleaned dataset using the following steps:
+
+\underline{\textit{Combine all data into a table:}} I pivoted the Vehicle Information table into a new table to with more columns for vehicle features. Then I combined all four tables (Insurance Claim Information, Customer Demographics, Insurance Policy, and Vehicle Information) along Customer ID.
+
+
+\underline{\textit{Clean some obvious data errors:}} I dropped the Country columns since it only contains India. Figured out different forms that represents the missed data in each column. Identify columns with small amount of missed data and then drop rows that contains those missed data. Identified and fixed columns that refect numeric data in nature but their data in incorrect data types. 
+
+\underline{\textit{Clean data in catetorical columns:}} Three columns (Type Of Collission, PropertyDamage, and PoliceReport) contains many missing values so we drop the entire columns. For each column we identify rare occured objects and then we drop rows containing them.
+
+\underline{\textit{Clean data in numerical column:}} In each column we checked the statistics to figure out the outliers. Then we removed rows containing the outlier or replace the outliers with other appropriate values. 
+
+I finally obtains a new and cleaned data set with 27149 rows and 36 columns.
+
+
+
+\section{Exploratory Data Analysis Data Processing}
+
+Through the EDA above, we basically perform the following steps:
+
+\begin{enumerate}
+    \item I first explore the distribution of each variable. In the exploration, I also  the showed the distribution of data of fraudulent claims and data of non-fraudulent claims separately.
+    \item I explore correlations between numeric variables and identify pairs of strong correlation variables.
+    \item Investigate I invested categorical variables and drop the ones with many values which are the columns: Date Of Incident, Incident Address, Date Of Policy Coverage, and VehicleID.
+    \item I convert categorical variables into multiple numeric variables using order encoder and One-Hot-Encoder.
+    \item I split the data into training set (80\%) and testing set (20\%)  with predictor variables and target separately.
+    \item I standized the training set and then appled the transformation into the test set.
+\end{enumerate}
+
+\section{Algorithms \& Machine Learning}
+\subsection{Modeling}
+
+Since the data set was unbalanced (25\% positive and 75\% negative), I chose AUC score for model evaluation and selection. By using cross validation, I obtained the following performance model results with default parameters: 
+
+\vspace{0.2in}
+
+\begin{center}
+\begin{tabular}{||c c||} 
+ \hline
+ Models & AUC scores\\ [0.5ex] 
+ \hline\hline
+ KNeighborsClassifier & 0.90 \\ 
+ \hline
+ Logistic regression & 0.79 \\
+ \hline
+ SVM (with polynomial kernel) & 0.91 \\
+ \hline
+ SVM (with radial basis function kernel) & 0.91 \\
+ \hline
+ Decision Tree & 0.79\\
+ \hline
+ Random Forrest & 0.91 \\ 
+ %[1ex] 
+ \hline
+ AdaBoost with random forests & 0.91\\
+ \hline
+ GradientBoostingClassifier & 0.88\\
+ \hline
+ XGBoost & 0.91\\
+ \hline
+\end{tabular}
+\end{center}
+
+\vspace{0.2in}
+For the simplicity and interpretability I choose the Random forest model to proceed and then I run the Grid Search to choose the best parameters for the model.
+
+\subsection{Model performance on the test set}
+
+The chosen model achieves the 0.92 AUC scores. We also achieved the accuracy 92\% and the precision, recall, and F1-scores as follows:
+
+\begin{tabular}{ |p{2cm}||p{2cm}|p{2cm}|p{2cm}|p{2cm}|  }
+ \hline
+ \multicolumn{5}{|c|}{Report for the performance on the test set} \\
+ \hline
+\text{ }& Precision & Recall & F1-score & Support\\
+ \hline
+ Positive   & 0.92    &0.98&   0.95 & 3953\\
+ Negative&   0.94  & 0.77   &0.85& 1477\\
+ \hline
+\end{tabular}
+
+\vspace{0.2in}
+
+\subsection{Feature Importance} Features that came up as important in the modeling as follows:
+
+
+\vspace{0.2in}
+\begin{tabular}{ |p{3cm}|p{8cm}|p{2.5cm}|  }
+ \hline
+ \multicolumn{3}{|c|}{Feature Importance} \\
+ \hline
+Rank& Feature & Contribution\\
+ \hline
+1 & Severity Of Incident   &       0.091433\\
+2 & Insured Hobbies chess  &      0.041979\\
+3 & Amount Of Property Claim  &     0.041606\\
+4 & Amount Of Injury Claim   &      0.039432\\
+5 & Amount Of Vehicle Damage  &     0.038610\\
+6 & Insured ZipCode        &      0.037906\\
+7 & Insured Hobbies cross-fit &   0.036741\\
+8 & Policy Annual Premium &        0.035482\\
+9 & Date Of Incident    &          0.034266\\
+10 & Customer Loyalty Period    &   0.033565\\
+11 & Year Of Policy   &             0.028093\\
+12 & Insured Age   &               0.027673\\
+13 & Incident Time   &             0.027563\\
+14 & Policy Deductible   &        0.026136\\
+15 & Vehicle Year of Model  &                0.025515\\
+16 &Capital Loss  &               0.019094\\
+17 & Capital Gains &               0.018804\\
+18 & Insured Education Level  &     0.016937\\
+19 & Witnesses      &             0.014973\\
+20 & Bodily Injuries &              0.012492\\
+ \hline
+\end{tabular}
+
+\vspace{0.2in}
+
+\section{Acknowledgements} 
+I would like to thank my Springboard mentor Tony Paek for very helpful comments and great suggestions on this project.
+
+%\includegraphics[scale = 0.7]{Vertical_drop.png}
+
+%\includegraphics[scale = 0.7]{Slow_making area.png}
+
+%\includegraphics[scale = 0.7]{Total_chairs.png}
+
+%\includegraphics[scale = 0.7]{Fast_quads.png}
+
+%\includegraphics[scale = 0.7]{Runs.png}
+
+%\includegraphics[scale = 0.7]{Longest_runs.png}
+
+%\includegraphics[scale = 0.7]{Trams.png}
+
+%\includegraphics[scale = 0.7]{Skiable_area.png}
+
+%\includegraphics[scale = 0.7]{Ticket_price.png}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                BIBLIOGRAPHY
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+
+
+
+%future plan on subgroup distortions
+
